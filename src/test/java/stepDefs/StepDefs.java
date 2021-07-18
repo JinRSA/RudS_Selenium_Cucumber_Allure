@@ -170,7 +170,7 @@ public class StepDefs {
 
         List<WebElement> resultsPrice = m_driver.findElements(by);
         assert count <= resultsName.size() : count + ">" + resultsName.size() + "! Значение должно быть в пределах количества выводимых на странице результатов";
-        String output = m_city + "; " + m_object + '.';
+        String output = "Запуск инициирован: " + System.getenv("INITIATOR") + '\n' + m_city + "; " + m_object + '.';
         for (int i = 0; i < count; ++i)
             output += "\nНаименование: " + resultsName.get(i).getText() + "\nЦена: " + resultsPrice.get(i).getText();
         System.out.println(output);
